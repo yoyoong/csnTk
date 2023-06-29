@@ -42,6 +42,8 @@ target/maven-archiver/
 *.wig
 *.bigwig
 *.bw
+*.h5
+*.h5ad
 
 #常用文件格式
 *.pdf

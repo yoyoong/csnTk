@@ -2,6 +2,7 @@ from scipy.sparse import csr_matrix
 from scipy.stats import norm
 import numpy as np
 import pandas as pd
+import sys, os
 
 def upperlower(data, boxsize):
     (n1, n2) = data.shape  # n1 gene; n2 sample
@@ -122,7 +123,16 @@ def getCSNList(args, input_data1, input_data2):
 
 def main(in_args):
     args = in_args
-    input_data = pd.read_csv(args.inputFile, sep = '\t')
+    try:
+        basename = os.path.basename(args.inputFile)
+        if basename.find('.pickle') >= 0:
+            input_data = pd.read_pickle(args.inputFile)
+        else:
+            input_data = pd.read_csv(args.inputFile, sep='\t')
+    except:
+        sys.stderr.write('Fail to open input file %s' % args.inputFile)
+        sys.exit(1)
+    print(input_data)
     if args.sampleID is not None:
         input_sampleID = []
         with open(args.sampleID, 'r') as f:
