@@ -132,7 +132,7 @@ def main(in_args):
     except:
         sys.stderr.write('Fail to open input file %s' % args.inputFile)
         sys.exit(1)
-    print(input_data)
+        
     if args.sampleID is not None:
         input_sampleID = []
         with open(args.sampleID, 'r') as f:
