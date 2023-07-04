@@ -27,6 +27,7 @@ logs/
 target/classes/
 target/maven-archiver/
 .out*/
+__pycache__/
 
 #常用input/output文件
 *.gz
@@ -44,6 +45,9 @@ target/maven-archiver/
 *.bw
 *.h5
 *.h5ad
+*.csv
+*.tsv
+*.pt
 
 #常用文件格式
 *.pdf

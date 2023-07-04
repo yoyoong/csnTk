@@ -130,9 +130,9 @@ def main(in_args):
         else:
             input_data = pd.read_csv(args.inputFile, sep='\t')
     except:
-        sys.stderr.write('Fail to open input file %s' % args.inputFile)
+        sys.stderr.write('Fail to open inputdata file %s' % args.inputFile)
         sys.exit(1)
-        
+
     if args.sampleID is not None:
         input_sampleID = []
         with open(args.sampleID, 'r') as f:
